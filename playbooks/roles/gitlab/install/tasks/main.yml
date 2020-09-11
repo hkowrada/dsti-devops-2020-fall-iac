@@ -25,20 +25,21 @@
     - https
 
 # - name: Reload firewalld
-#   COMPLETE HERE
+sudo systemctl reload firewalld
 
 # - name: Install postfix
-#   COMPLETE HERE
+sudo yum install postfix
 
 # - name: Enable and start postfix
-#   COMPLETE HERE
+sudo systemctl enable postfix
+sudo systemctl start postfix
 
 # - name: Download GitLab package script
-#   COMPLETE HERE
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash
 #   TIP: Use the get_url module to download the script.rpm.sh
 
 # - name: Execute GitLab package script
-#   COMPLETE HERE
+sudo EXTERNAL_URL="http://gitlab.local" yum install -y gitlab-ee
 #   TIP: Use the script module to run the script.rpm.sh
 
 - name: Install GitLab
